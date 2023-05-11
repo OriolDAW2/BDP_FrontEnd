@@ -1,0 +1,89 @@
+/* Estilos para el fondo translúcido */
+.modal-background {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilos para el contenido de la ventana emergente */
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Estilos para el botón de cierre */
+  .close-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .input {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 100%;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f8931f;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .button:hover {
+    background-color: #e57515;
+  }
+  
+  .close-button:hover {
+    background-color: rgb(131, 0, 0);
+  }
+  

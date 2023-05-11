@@ -1,0 +1,58 @@
+/* Menu Principal */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1;
+    font-family: "Sora", sans-serif;
+    font-size: 20px;
+    color: #f8931f;
+}
+  
+.logo img {
+    height: 70px;
+    margin-left: 20px;
+    width: 80px;
+}
+  
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.menu li {
+    margin-right: 20px;
+}
+  
+.menu a {
+    color: #f8931f;
+    text-decoration: none;
+}
+  
+.config {
+    height: 30px;
+    margin-right: 50px;
+    color: #f8931f;
+
+}
+  
+a:hover {
+    color: #ffffff;
+}
+
+.icon {
+    color: #f8931f;
+}
+  
+.icon:hover {
+    color: white;
+}
+
