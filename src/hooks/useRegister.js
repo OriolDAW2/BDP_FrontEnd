@@ -33,37 +33,33 @@ export const useRegister = () => {
     //     }
     // };
 
-    const doRegister = (formState) =>  {
-    
+    const doRegister = (formState) => {
         console.log("Comprovant credencials....")
         // Enviam dades a l'aPI i recollim resultat
         fetch ("http://localhost:8000/api/users/",{
-            
-             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            method: "POST",
-            body: JSON.stringify(formState)
-        }
-        ).then( data => data.json() )
-        .then (resposta => { 
-                if (resposta.access != null )
-                {
-                    setAuthToken(resposta.access);
-                    console.log(resposta.access);
-                    alert("Usuario Creat");
-                }
-                else
-                { 
-                    setAuthToken("");
-                    alert("Usuario o Contraseña Incorrecta");
-                }
-            } ) 
-        .catch((data) => {
-            console.log("Network error")
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          method: "POST",
+          body: JSON.stringify(formState)
+        }).then(data => data.json())
+          .then(resposta => { 
+            if (resposta.access != null ) {
+              setAuthToken(resposta.access);
+              localStorage.setItem("token", resposta.access); // guardamos el token en localStorage
+              console.log(resposta.access);
+              alert("Usuario Creat");
+            } else { 
+              setAuthToken("");
+              localStorage.removeItem("token"); // eliminamos el token del localStorage
+              alert("Usuario o Contraseña Incorrecta");
+            }
+        }).catch((data) => {
+          console.log("Network error")
         });
-    }
+      }
+      
 
     // useEffect(() => {
     //     checkAuthToken();

@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react';
 import { UserContext } from '../usercontext';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import User from '/img/user1.png';
 
@@ -16,7 +17,7 @@ export const Playlist = ({ v }) => {
       <div className="artist">
         <img src={User} />
         <div className="artist-details">
-          <h3>{v.name}</h3>
+        <Link to={"/playlists/" + v.id}><h4 className='white'>{v.name}</h4></Link>
         </div>
       </div>
     </div> 

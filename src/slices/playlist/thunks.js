@@ -50,9 +50,34 @@ export const addPlaylist = (formulari, authToken) => {
 
     if (resposta != null) {
         console.log("Playlist Creada");
-        dispatch(startLoadingPlaylist());
     } else {
         console.log("Error al crear");
     }
   };
+}
+
+export const getPlaylist = (id, authToken) => {
+    return async (dispatch, getState) => {
+        dispatch(startLoadingPlaylist());
+
+        const headers = {
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+                Authorization: "Bearer " + authToken,
+            },
+            method: "GET",
+        };
+        const url = "http://localhost:8000/api/playlists/" + id
+
+        const data = await fetch(url, headers);
+        const resposta = await data.json();
+
+        if(resposta != null) {
+            dispatch(setPlaylist(resposta));
+            console.log(resposta);
+        }else {
+            console.log("Catch");
+        }
+    };
 }

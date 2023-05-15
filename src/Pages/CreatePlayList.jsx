@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getArtists } from '../slices/artists/thunks';
 import { UserContext } from '../usercontext';
 
 import './css/CreatePlaylist.css';
-import { addPlaylist } from '../slices/playlist/thunks';
+import { addPlaylist, getPlaylist } from '../slices/playlist/thunks';
 
 const CreatePlaylist = ({setShowModal}) => {
   const [playlistName, setPlaylistName] = useState('');
@@ -14,10 +13,6 @@ const CreatePlaylist = ({setShowModal}) => {
   const dispatch = useDispatch();
 
   const [formulari, setFormulari] = useState({});
-
-  useEffect(() => {
-    dispatch(getArtists(authToken, page));
-  }, []);
 
   const onClose = () => {
     setShowModal(false);
@@ -62,7 +57,7 @@ const CreatePlaylist = ({setShowModal}) => {
             </select>
           </div>
           <div>
-            <button className="button" type="submit" onClick={(e) => { e.preventDefault();  dispatch( addPlaylist(formulari, authToken))} }>Create Playlist</button>
+            <button className="button" type="submit" onClick={(e) => { e.preventDefault(); onClose(); dispatch( addPlaylist(formulari, authToken))} }>Create Playlist</button>
           </div>
         </form>
         <button className="close-button" onClick={() => onClose()}>

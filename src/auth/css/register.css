@@ -3,8 +3,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
-  margin-top: 4%;
 }
 
 .register-title {
@@ -12,6 +10,8 @@
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: -40px;
+  margin-top: 0;
 }
 
 .register-form {
@@ -23,8 +23,9 @@
   padding: 2rem;
   border-radius: 1rem;
   color: black;
-  width: 100%;
-  max-width: 500px;
+  width: 25%;
+  max-width: 400px;
+  padding-right: 70px;
 }
 
 .register-input-container {

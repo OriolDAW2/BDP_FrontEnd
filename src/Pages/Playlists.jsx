@@ -35,7 +35,6 @@ function Playlists() {
     <div className="recommended-playlists">
       <div class="playlist-header">
         <h2>Playlist Recomendadas</h2>
-        {/* <Pagination totalPages={pages} currentPage={page} onPageChange={handlePageChange} setPage={(newPage) => dispatch(setPage(newPage))} /> */}
         <button className="playlist-header-button" onClick={() => setShowModal(!showModal)}>Crear Playlist</button>
         {showModal &&
           <CreatePlaylist setShowModal={setShowModal}/>
@@ -50,6 +49,7 @@ function Playlists() {
           )   
         })}</>}
       </div>
+      <Pagination totalPages={pages} currentPage={page} onPageChange={handlePageChange} setPage={(newPage) => dispatch(setPage(newPage))} />
     </div>
   );
 }

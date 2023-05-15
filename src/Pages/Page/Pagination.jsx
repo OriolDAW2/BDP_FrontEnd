@@ -4,9 +4,10 @@ import { setPage } from "../../slices/playlist/playlistSlice";
 
 import "./css/PaginatePlaylist.css";
 
-const Pagination = ({ itemsPerPage, onPageChange }) => {
+const Pagination = ({ totalPages, onPageChange }) => {
   const { playlists = [], page, isLoading=true, error="" } = useSelector((state) => state.playlists);
-  const totalPages = Math.ceil(playlists.length / itemsPerPage);
+
+  console.log(totalPages);
   const dispatch = useDispatch();
 
   const handleClick = (e, index) => {
@@ -26,6 +27,7 @@ const Pagination = ({ itemsPerPage, onPageChange }) => {
 
   const handleNextClick = (e) => {
     e.preventDefault();
+    console.log(totalPages)
     if (page < totalPages) {
       dispatch(setPage(page + 1));
       console.log(page);
@@ -50,8 +52,8 @@ const Pagination = ({ itemsPerPage, onPageChange }) => {
   };
 
   const renderData = () => {
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+    const startIndex = (page - 1) * totalPages;
+    const endIndex = startIndex + totalPages;
 
     return playlists.slice(startIndex, endIndex).map((item, index) => (
       <div key={index}>{/* Renderizar cada elemento aquí */}</div>

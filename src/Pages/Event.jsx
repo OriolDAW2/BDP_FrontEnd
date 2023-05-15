@@ -17,7 +17,7 @@ export const Event = ({ v }) => {
       <div className="artist">
         <img src={User} />
         <div className="artist-details">
-          <h3>Nombre: </h3><Link to={"/events/" + v.id}><h4 className='white'>{v.name}</h4></Link>
+          <Link to={"/events/" + v.id}><h4 className='white'>{v.name}</h4></Link>
         </div>
       </div>
     </div>

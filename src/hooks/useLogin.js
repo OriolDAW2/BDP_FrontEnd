@@ -33,36 +33,46 @@ export const useLogin = () => {
     //     }
     // };
 
-    const doLogin = (formState) =>  {
-    
-        console.log("Comprovant credencials....")
-        // Enviam dades a l'aPI i recollim resultat
-        fetch ("http://localhost:8000/api/token/",{
-            
-             headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            method: "POST",
-            body: JSON.stringify(formState)
+    const doLogin = (formState) => {
+        console.log("Comprobando credenciales....")
+        
+        // Comprobamos si hay un token guardado en local storage
+        let token = localStorage.getItem("authToken") || ""
+        
+        if (token) {
+          // Si ya hay un token guardado, lo seteamos y terminamos la función
+          setAuthToken(token);
+          return;
         }
-        ).then( data => data.json() )
-        .then (resposta => { 
-                if (resposta.access != null )
-                {
-                    setAuthToken(resposta.access);
-                    console.log(resposta.access);
-                }
-                else
-                { 
-                    setAuthToken("");
-                    alert("Usuario o Contraseña Incorrecta");
-                }
-            } ) 
-        .catch((data) => {
-            console.log("Network error")
+        
+        // Si no hay un token guardado, enviamos las credenciales al servidor
+        fetch("http://localhost:8000/api/token/", {
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          method: "POST",
+          body: JSON.stringify(formState)
+        })
+        .then(data => data.json())
+        .then(res => {
+          if (res.access) {
+            // Si el servidor devuelve un token, lo guardamos en local storage
+            localStorage.setItem("authToken", res.access);
+            setAuthToken(res.access);
+            console.log(res.access);
+          } else {
+            setAuthToken("");
+            alert("Usuario o contraseña incorrecta");
+          }
+        })
+        .catch(err => {
+          console.log("Error de red:", err);
         });
-    }
+      };
+      
+      
+      
 
     // useEffect(() => {
     //     checkAuthToken();

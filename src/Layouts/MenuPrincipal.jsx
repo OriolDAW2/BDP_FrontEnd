@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGear } from "@fortawesome/free-solid-svg-icons";
-import { faSearch, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
 
 import "./css/style.css";
 
+import Logout from "./Logout";
 
 function Menu() {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav>
+    <nav className="nav">
       <div className="logo">
-        <a href="#"><img src="/img/logo.png" /></a>
+        <a href="#">
+          <img src="/img/logo.png" alt="Logo" />
+        </a>
       </div>
       <ul className="menu">
         <li>
@@ -20,24 +28,34 @@ function Menu() {
           <a href="#">Canciones</a>
         </li>
         <li>
-          <a href="#">PlayList</a>
+          <a href="#">Artistas</a>
         </li>
         <li>
-          <a href="#">Artistas</a>
+          <a href="#">Playlists</a>
         </li>
         <li>
           <a href="#">Eventos</a>
         </li>
-        <li>
-          <a href="#">Favoritos</a>
-        </li>
       </ul>
-      <div className="config">
-        <a href=""><FontAwesomeIcon icon={faGear} className="icon"/></a>
+      <div className="setting-menu">
+        <button className="setting-menu-btn" onClick={handleMenuToggle}>
+          <FontAwesomeIcon icon={faCog} className="icon" />
+        </button>
+        {isMenuOpen && (
+          <ul className="setting-menu-dropdown">
+            <li>
+              <a href="#">Perfil</a>
+            </li>
+            <li>
+              <a href="#">Soporte Tecnico</a>
+            </li>
+            <li>
+              <Logout />
+            </li>
+          </ul>
+        )}
       </div>
     </nav>
-    
-    
   );
 }
 

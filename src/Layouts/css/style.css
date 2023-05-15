@@ -1,5 +1,5 @@
 /* Menu Principal */
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,3 +56,93 @@ a:hover {
     color: white;
 }
 
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20%;
+}
+  
+.logout-btn:hover {
+    background-color: #ff6666;
+}
+  
+
+.setting-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+
+}
+
+.setting-menu a {
+    color: #f8931f;
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.setting-menu a:hover {
+    color: white;
+}
+  
+.setting-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+  
+.setting-menu-btn:focus {
+    outline: none;
+}
+  
+.setting-menu-btn .icon {
+    font-size: 18px;
+    transition: color 0.3s ease;
+    margin-right: 20px;
+}
+  
+.setting-menu-btn:hover .icon {
+    color: #333;
+}
+  
+.setting-menu-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: black;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 10px 0;
+    min-width: 200px;
+    z-index: 1;
+    margin-right: 10px;
+    margin-top: 30px;
+    list-style: none;
+}
+  
+.setting-menu-dropdown li {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+  
+.setting-menu-dropdown li:last-child {
+    border-bottom: none;
+}
+  
+.setting-menu-btn:focus + .setting-menu-dropdown,
+.setting-menu-dropdown:hover {
+    display: block;
+}
+  
