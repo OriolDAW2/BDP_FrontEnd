@@ -1,10 +1,9 @@
 .recommended-artists {
   color: #f8931f;
   padding: 20px;
-  margin-top: 5%;
   margin-left: 5%;
   margin-right: 5%;
-  
+  margin-top: 5%;
 }
 
 .recommended-artists h2 {
@@ -61,6 +60,7 @@
 
 .white {
   color: #fff;
+  text-decoration: none;
 }
 
 .orange  {

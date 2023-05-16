@@ -4,8 +4,8 @@ import { UserContext } from "../usercontext";
 import CreatePlaylist from "./CreatePlayList";
 import { Playlist } from "./Playlist";
 import { getPlaylists } from "../slices/playlist/thunks";
-import Pagination from "./Page/Pagination";
 import { setPage } from "../slices/playlist/playlistSlice";
+import PaginationPlaylists from "./Page/PaginationPlaylists";
 
 import "./css/playlist.css";
 
@@ -49,7 +49,7 @@ function Playlists() {
           )   
         })}</>}
       </div>
-      <Pagination totalPages={pages} currentPage={page} onPageChange={handlePageChange} setPage={(newPage) => dispatch(setPage(newPage))} />
+      <PaginationPlaylists totalPages={pages} currentPage={page} onPageChange={handlePageChange} setPage={(newPage) => dispatch(setPage(newPage))} />
     </div>
   );
 }

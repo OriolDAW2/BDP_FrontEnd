@@ -1,4 +1,4 @@
-import { startLoadingEvents, setError, setEvents, setEvent, setPages } from "./eventSlice";
+import { startLoadingEvents, setError, setEvents, setEvent, setPages, setPage } from "./eventSlice";
 
 
 export const getEvents = (authToken, page = 0) => {

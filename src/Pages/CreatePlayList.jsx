@@ -57,7 +57,7 @@ const CreatePlaylist = ({setShowModal}) => {
             </select>
           </div>
           <div>
-            <button className="button" type="submit" onClick={(e) => { e.preventDefault(); onClose(); dispatch( addPlaylist(formulari, authToken))} }>Create Playlist</button>
+            <button className="button-create" type="submit" onClick={(e) => { e.preventDefault(); onClose(); dispatch( addPlaylist(formulari, authToken))} }>Create Playlist</button>
           </div>
         </form>
         <button className="close-button" onClick={() => onClose()}>

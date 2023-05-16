@@ -6,12 +6,11 @@ import { UserContext } from './usercontext';
 import Menu from './Layouts/MenuPrincipal';
 import Artists from './Pages/Artists';
 import Playlists from './Pages/Playlists';
-// import LandingPage from './Pages/LandingPage';
-// import MusicPlayer from './Layouts/MusicPlayer';
 import Events from './Pages/Events';
 import Songs from './Pages/Songs';
 import CreatePlaylist from './Pages/CreatePlayList';
 import Footer from './Layouts/Footer';
+import MusicPlayer from './MusicPlayer/MusicPlayer';
 
 import { EventShow } from './Pages/EventShow';
 import { PlaylistShow } from './Pages/PlaylistShow';
@@ -43,8 +42,8 @@ function App() {
                 <Artists/>
                 <Playlists/>
                 <Events/>
+                <MusicPlayer/>
                 <Footer/>
-                {/* <MusicPlayer/> */}
               </>
             }/>
             {/* <Route path="/events" element={<EventPage/>}/> */}

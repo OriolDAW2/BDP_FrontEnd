@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     songs: [],
+    currentSong: null, // Agregamos currentSong inicialmente como null
     song: {
         title: "",
         image: "",
@@ -13,6 +14,7 @@ const initialState = {
     pages: [],
     isLoading: false,
     error: "",
+    isPlaying: false, 
 }
 
 export const songSlice = createSlice({
@@ -44,8 +46,13 @@ export const songSlice = createSlice({
         setPages: (state,action) => {
             state.pages = action.payload
         },
+
+        playSong: (state, action) => {
+            state.currentSong = action.payload; // Actualizamos currentSong con la canción seleccionada
+            state.isPlaying = true; // Establecer el estado de reproducción a true
+        },
     }
 });
 
-export const { startLoadingSong, setSongs, setSong, setError, setPage, setPages } = songSlice.actions;
+export const { startLoadingSong, setSongs, setSong, setError, setPage, setPages, playSong } = songSlice.actions;
 export default songSlice.reducer;

@@ -4,7 +4,7 @@ import { setPage } from "../../slices/playlist/playlistSlice";
 
 import "./css/PaginatePlaylist.css";
 
-const Pagination = ({ totalPages, onPageChange }) => {
+const PaginationPlaylists = ({ totalPages, onPageChange }) => {
   const { playlists = [], page, isLoading=true, error="" } = useSelector((state) => state.playlists);
 
   console.log(totalPages);
@@ -88,4 +88,4 @@ const Pagination = ({ totalPages, onPageChange }) => {
   );
 };
 
-export default Pagination;
+export default PaginationPlaylists;

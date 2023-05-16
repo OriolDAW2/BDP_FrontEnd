@@ -9,6 +9,7 @@ import { Song } from './Song';
 import "./css/events.css";
 
 import Playlist from '/img/playlist.jpg';
+import MusicPlayer from '../MusicPlayer/MusicPlayer';
 
 export const PlaylistShow = () => {
 

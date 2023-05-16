@@ -16,7 +16,7 @@ export const Artist = ({ v }) => {
       <div className="artist">
         <img src={User} />
         <div className="artist-details">
-          <h3>Nombre: <h4 className='white'>{v.name}</h4></h3>
+          <h4 className='white'>{v.name}</h4>
         </div>
       </div>
     </div>

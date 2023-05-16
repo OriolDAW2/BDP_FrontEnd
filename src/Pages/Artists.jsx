@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faFilter } from "@fortawesome/free-solid-svg-icons";
 import { UserContext } from '../usercontext';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArtists } from '../slices/artists/thunks';
 import { Artist } from './Artist';
+import PaginationArtists from './Page/PaginationArtists';
+import { setPage } from '../slices/artists/artistSlice';
 
 import User from '/img/user1.png';
 
@@ -15,9 +15,21 @@ function Artists() {
   const { artists = [], page, isLoading=true, error="", filter } = useSelector((state) => state.artists);
   const dispatch = useDispatch();
 
+  const handlePageChange = (pageNumber) => {
+    if (pageNumber !== page) {
+      dispatch(getArtists(authToken, pageNumber));
+    }
+  };
+
   useEffect(() => {
     dispatch(getArtists(authToken, page));
-  }, []);
+  }, [page]);
+
+  const itemsPerPage = 5;
+  const pages = Math.ceil(artists.length / itemsPerPage);
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentArtists = artists.slice(startIndex, endIndex);
 
   return (
     <div className="recommended-artists">
@@ -31,6 +43,7 @@ function Artists() {
           )   
         })}</>}
       </div>
+      <PaginationArtists totalPages={pages} currentPage={page} onPageChange={handlePageChange} setPage={(newPage) => dispatch(setPage(newPage))} />
     </div>
   );
 }
