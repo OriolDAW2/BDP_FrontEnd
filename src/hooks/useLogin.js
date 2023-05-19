@@ -46,7 +46,7 @@ export const useLogin = () => {
         }
         
         // Si no hay un token guardado, enviamos las credenciales al servidor
-        fetch("http://localhost:8000/api/token/", {
+        fetch("http://95.217.20.145/api/token/", {
           headers: {
             "Accept": "application/json",
             "Content-Type": "application/json"

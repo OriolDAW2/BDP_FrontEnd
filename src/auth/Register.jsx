@@ -14,10 +14,9 @@ const Register = ({ setLogin }) => {
     username: "",
     email: "",
     password: "",
-    password2: "",
   });
         
-  const { username, email, password, password2} = formState
+  const { username, email, password} = formState
 
   // if (password !== password2 ) {
   //   alert("Els passwords han de coincidir");
@@ -70,8 +69,6 @@ const Register = ({ setLogin }) => {
               type="password"
               id="confirm-password"
               className="register-input"
-              value={password2}
-              onChange={onInputChange}
             />
           </div>
           <button type="submit" className="register-button" onClick={ () => { doRegister(formState) }}>Register</button>

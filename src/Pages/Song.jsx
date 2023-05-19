@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { UserContext } from "../usercontext";
 import { useContext } from "react";
 import { playSong } from "../slices/songs/songSlice";
@@ -8,8 +8,9 @@ import User from "/img/user1.png";
 import "./css/createPlaylist.css";
 
 export const Song = ({ v }) => {
+  const { user, email, setUser, authToken, setAuthToken } = useContext(UserContext);
+  const { songs = [], page, isLoading=true, error="" } = useSelector((state) => state.songs);
   const dispatch = useDispatch();
-  const { authToken } = useContext(UserContext);
 
   const handlePlaySong = () => {
     dispatch(playSong(v));

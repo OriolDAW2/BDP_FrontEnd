@@ -13,7 +13,7 @@ export const getPlaylists = (authToken, page = 0) => {
             },
             method: "GET",
         };
-        let url = "http://localhost:8000/api/playlists/";
+        let url = "http://95.217.20.145/api/playlists/";
 
         const data = await fetch(url, headers);
         const resposta = await data.json();
@@ -36,7 +36,7 @@ export const addPlaylist = (formulari, authToken) => {
     formData.append("name", name);
 
     const data = await fetch(
-      "http://localhost:8000/api/playlists/",
+      "http://95.217.20.145/api/playlists/",
       {
         headers: {
           Accept: "application/json",
@@ -68,7 +68,7 @@ export const getPlaylist = (id, authToken) => {
             },
             method: "GET",
         };
-        const url = "http://localhost:8000/api/playlists/" + id
+        const url = "http://95.217.20.145/api/playlists/" + id
 
         const data = await fetch(url, headers);
         const resposta = await data.json();

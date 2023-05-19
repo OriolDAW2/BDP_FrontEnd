@@ -11,6 +11,7 @@ import Songs from './Pages/Songs';
 import CreatePlaylist from './Pages/CreatePlayList';
 import Footer from './Layouts/Footer';
 import MusicPlayer from './MusicPlayer/MusicPlayer';
+import ProfilePage from './Layouts/Profile';
 
 import { EventShow } from './Pages/EventShow';
 import { PlaylistShow } from './Pages/PlaylistShow';
@@ -20,6 +21,8 @@ import './App.css';
 function App() {
 
   const [authToken, setAuthToken] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
 
   useEffect(() => {
     // Recuperar el token de localStorage y establecerlo en el estado
@@ -50,6 +53,7 @@ function App() {
             <Route path="/createPlayList" element={<CreatePlaylist/>}/>
             <Route path="/events/:id" element={<EventShow/>}/>
             <Route path="/playlists/:id" element={<PlaylistShow/>}/>
+            <Route path="/profile" element={<ProfilePage/>}/>
           </Routes>
         ) : (
           <LoginRegister/>

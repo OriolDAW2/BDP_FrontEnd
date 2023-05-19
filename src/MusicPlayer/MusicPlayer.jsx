@@ -80,7 +80,8 @@ const MusicPlayer = () => {
         <div className="song-info">
           <img src={currentSong.image} alt="Song Cover" />
           <div className="song-details">
-            <h3>{currentSong.title}</h3>
+            <h3 className='orange'>{currentSong.title}</h3>
+            <h3>{currentSong.artist.name}</h3>
           </div>
         </div>
       )}

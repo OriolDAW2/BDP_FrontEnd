@@ -1,0 +1,31 @@
+.profile-page {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .profile-header {
+    text-align: center;
+  }
+  
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .profile-bio {
+    margin-top: 20px;
+  }
+  
+  .profile-bio h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-bio p {
+    line-height: 1.5;
+  }
+  

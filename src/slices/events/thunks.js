@@ -13,7 +13,7 @@ export const getEvents = (authToken, page = 0) => {
             },
             method: "GET",
         };
-        let url = "http://localhost:8000/api/events/";
+        let url = "http://95.217.20.145/api/events/";
 
         const data = await fetch(url, headers);
         const resposta = await data.json();
@@ -39,7 +39,7 @@ export const getEvent = (id, authToken) => {
             },
             method: "GET",
         };
-        const url = "http://localhost:8000/api/events/" + id
+        const url = "http://95.217.20.145/api/events/" + id
 
         const data = await fetch(url, headers);
         const resposta = await data.json();

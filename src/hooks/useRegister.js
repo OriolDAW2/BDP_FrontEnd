@@ -3,7 +3,7 @@ import { UserContext } from "../usercontext";
 
 export const useRegister = () => {
 
-    let { authToken, setAuthToken } = useContext(UserContext);
+    let { username, setUsername, authToken, setAuthToken, email, setEmail } = useContext(UserContext);
 
     // const checkAuthToken = () => {
 
@@ -36,7 +36,7 @@ export const useRegister = () => {
     const doRegister = (formState) => {
         console.log("Comprovant credencials....")
         // Enviam dades a l'aPI i recollim resultat
-        fetch ("http://localhost:8000/api/users/",{
+        fetch ("http://95.217.20.145/api/users/",{
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -45,14 +45,11 @@ export const useRegister = () => {
           body: JSON.stringify(formState)
         }).then(data => data.json())
           .then(resposta => { 
-            if (resposta.access != null ) {
-              setAuthToken(resposta.access);
-              localStorage.setItem("token", resposta.access); // guardamos el token en localStorage
-              console.log(resposta.access);
+            if (resposta.username != null ) {
+              setUsername(resposta.username);
+              setEmail(resposta.email);
               alert("Usuario Creat");
             } else { 
-              setAuthToken("");
-              localStorage.removeItem("token"); // eliminamos el token del localStorage
               alert("Usuario o Contraseña Incorrecta");
             }
         }).catch((data) => {
