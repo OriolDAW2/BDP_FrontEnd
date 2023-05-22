@@ -6,8 +6,6 @@ import './css/CreatePlaylist.css';
 import { addPlaylist, getPlaylist } from '../slices/playlist/thunks';
 
 const CreatePlaylist = ({setShowModal}) => {
-  const [playlistName, setPlaylistName] = useState('');
-  const [playlistTracks, setPlaylistTracks] = useState([]);
   const { user, email, setUser, authToken, setAuthToken } = useContext(UserContext);
   const { songs = [], page, isLoading=true, error="", filter } = useSelector((state) => state.songs);
   const dispatch = useDispatch();

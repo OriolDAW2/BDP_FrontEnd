@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { Link } from "react-router-dom";
 
 import "./css/footer.css";
 
@@ -10,10 +13,21 @@ function Footer() {
           <div className="footer-column">
             <h4>Enlaces útiles</h4>
             <ul>
-              <li><a href="#">Canciones</a></li>
-              <li><a href="#">Artistas</a></li>
-              <li><a href="#">Playlists</a></li>
-              <li><a href="#">Eventos</a></li>
+              <li>
+                <Link to="/about">
+                  <a>Sobre Nosotros</a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/terms">
+                  <a>Terminos y Condiciones</a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/support">
+                  <a>Soporte Tecnico</a>
+                </Link>  
+              </li>
             </ul>
           </div>
           <div className="footer-column">
@@ -27,15 +41,15 @@ function Footer() {
           <div className="footer-column">
             <h4>Síguenos en redes sociales</h4>
             <div className="social-icons">
-              <a href="#"><i className="fab fa-facebook"></i></a>
-              <a href="#"><i className="fab fa-twitter"></i></a>
-              <a href="#"><i className="fab fa-instagram"></i></a>
+              <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
+              <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
+              <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
             </div>
           </div>
         </div>
       </div>
       <div className="footer-bottom">
-        <div className="container">
+        <div className="container-footer">
           <p>© 2023 Tu Empresa. Todos los derechos reservados.</p>
         </div>
       </div>

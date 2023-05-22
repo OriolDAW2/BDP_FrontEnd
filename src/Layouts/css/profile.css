@@ -1,31 +1,73 @@
 .profile-page {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .profile-header {
-    text-align: center;
-  }
-  
-  .avatar {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
-  
-  .profile-bio {
-    margin-top: 20px;
-  }
-  
-  .profile-bio h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .profile-bio p {
-    line-height: 1.5;
-  }
-  
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 5%;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-info .name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.profile-info .email {
+  color: #777;
+  font-size: 16px;
+}
+
+.profile-bio {
+  margin-top: 20px;
+}
+
+.profile-bio h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.profile-bio p {
+  line-height: 1.5;
+}
+
+.social-links {
+  margin-top: 20px;
+}
+
+.social-links h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.links-list {
+  list-style: none;
+  padding: 0;
+}
+
+.links-list li {
+  margin-bottom: 5px;
+}
+
+.links-list li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.links-list li a:hover {
+  color: #f8931f;
+}

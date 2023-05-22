@@ -9,7 +9,7 @@ import "./css/createPlaylist.css";
 
 export const Song = ({ v }) => {
   const { user, email, setUser, authToken, setAuthToken } = useContext(UserContext);
-  const { songs = [], page, isLoading=true, error="" } = useSelector((state) => state.songs);
+  const { songs = [], page, isLoading=true, error="", currentSong} = useSelector((state) => state.songs);
   const dispatch = useDispatch();
 
   const handlePlaySong = () => {
@@ -19,7 +19,7 @@ export const Song = ({ v }) => {
   return (
     <div className="artist-container" onClick={handlePlaySong}>
       <div className="artist">
-        <img src={User} />
+        <img src={v.image} />
         <div className="artist-details">
           <h4 className="white">{v.title}</h4>
           <button className="button-create" onClick={() => handlePlaySong(v)}>Play</button>

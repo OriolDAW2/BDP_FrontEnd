@@ -10,11 +10,13 @@ export const Artist = ({ v }) => {
   const { user, email, setUser, authToken, setAuthToken } = useContext(UserContext);
   const { artists = [], page=0, isLoading=true, error="" } = useSelector((state) => state.artists);
   const dispatch = useDispatch();
+
+  console.log(v);
   
   return (
     <div className="artist-container">
       <div className="artist">
-        <img src={User} />
+        <img src={v.image} />
         <div className="artist-details">
           <h4 className='white'>{v.name}</h4>
         </div>

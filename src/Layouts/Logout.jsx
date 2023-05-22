@@ -8,6 +8,8 @@ const Logout = () => {
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('username');
+    localStorage.removeItem('email');
     setAuthToken('');
   };
 

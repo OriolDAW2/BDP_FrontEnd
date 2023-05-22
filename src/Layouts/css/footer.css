@@ -4,7 +4,7 @@
     padding: 40px 0;
   }
   
-  .container {
+  .container-footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -46,12 +46,12 @@
   }
   
   .footer-column ul li a:hover {
-    color: #333;
+    color: #f8931f;
   }
   
   /* Social Icons */
   .social-icons a {
-    color: #666;
+    color: white;
     margin-right: 10px;
     font-size: 20px;
     text-decoration: none;
@@ -59,7 +59,7 @@
   }
   
   .social-icons a:hover {
-    color: #333;
+    color: #f8931f;
   }
   
   /* Footer Bottom */
