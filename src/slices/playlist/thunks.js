@@ -62,9 +62,9 @@ export const getPlaylist = (id, authToken) => {
 
         const headers = {
             headers: {
-                Accept: "application/json",
+                "Accept": "application/json",
                 "Content-Type": "application/json",
-                Authorization: "Bearer " + authToken,
+                "Authorization": "Bearer " + authToken,
             },
             method: "GET",
         };
