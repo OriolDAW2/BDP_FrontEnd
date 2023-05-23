@@ -36,7 +36,7 @@ export const useRegister = () => {
     const doRegister = (formState) => {
         console.log("Comprovant credencials....")
         // Enviam dades a l'aPI i recollim resultat
-        fetch ("http://95.217.20.145/back/api/users/",{
+        fetch ("http://equip02.insjoaquimmir.cat/api/users/",{
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',

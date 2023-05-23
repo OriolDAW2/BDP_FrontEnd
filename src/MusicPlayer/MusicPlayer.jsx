@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UserContext } from '../usercontext';
 import { playSong } from '../slices/songs/songSlice';
 
-import './css/MusicPlayer.css';
+import './css/musicPlayer.css';
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);

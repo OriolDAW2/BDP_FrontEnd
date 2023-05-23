@@ -13,7 +13,7 @@ export const getEvents = (authToken, page = 0) => {
             },
             method: "GET",
         };
-        let url = "https://95.217.20.145/back/api/events/";
+        let url = "http://equip02.insjoaquimmir.cat/api/events/";
 
         const data = await fetch(url, headers);
         const resposta = await data.json();
@@ -39,7 +39,7 @@ export const getEvent = (id, authToken) => {
             },
             method: "GET",
         };
-        const url = "http://95.217.20.145/back/api/events/" + id
+        const url = "equip02.insjoaquimmir.cat/api/events/" + id
 
         const data = await fetch(url, headers);
         const resposta = await data.json();

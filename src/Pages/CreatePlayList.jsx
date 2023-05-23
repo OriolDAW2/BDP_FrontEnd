@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserContext } from '../usercontext';
 
-import './css/CreatePlaylist.css';
+import './css/createPlaylist.css';
 import { addPlaylist, getPlaylist } from '../slices/playlist/thunks';
 
 const CreatePlaylist = ({setShowModal}) => {
