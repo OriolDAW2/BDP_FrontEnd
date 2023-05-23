@@ -13,7 +13,7 @@ export const getSongs = (authToken, page = 0) => {
             },
             method: "GET",
         };
-        let url = "https://95.217.20.145/back/api/songs/";
+        let url = "http://equip02.insjoaquimmir.cat/api/songs/";
 
         const data = await fetch(url, headers);
         const resposta = await data.json();

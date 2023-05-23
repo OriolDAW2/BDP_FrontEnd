@@ -46,7 +46,7 @@ export const useLogin = () => {
       }
     
       // Si no hay un token guardado, enviamos las credenciales al servidor
-      fetch("https://95.217.20.145/back/api/token/", {
+      fetch("http://equip02.insjoaquimmir.cat/api/token/", {
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
