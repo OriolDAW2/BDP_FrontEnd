@@ -5,8 +5,6 @@ import { Event } from './Event';
 import { getEvents } from '../slices/events/thunks';
 import PaginationEvents from './Page/PaginationEvents';
 
-import User from '/img/user1.png';
-
 import './css/events.css';
 
 function Events() {

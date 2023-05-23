@@ -7,8 +7,6 @@ import { getEvent } from '../slices/events/thunks';
 
 import "./css/events.css";
 
-import Event from '/img/event.jpg';
-
 export const EventShow = () => {
 
   const { user, email, setUser, authToken, setAuthToken } = useContext(UserContext);
@@ -21,11 +19,13 @@ export const EventShow = () => {
   useEffect(() => {
     dispatch(getEvent(id, authToken));
   }, []);
+
+  console.log(event)
   
   return (
     <div className="event-show-container">
       <div className="event-show">
-        <img src={Event} alt="Event" className="event-show-img" />
+        <img src={event.image} alt="Event" className="event-show-img" />
         <div className="event-show-details">
           <h3 className="event-show-title">{event.name}</h3>
           <div className="event-show-info">

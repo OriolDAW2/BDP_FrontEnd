@@ -16,6 +16,8 @@ export const Song = ({ v }) => {
     dispatch(playSong(v));
   };
 
+  console.log(v)
+
   return (
     <div className="artist-container" onClick={handlePlaySong}>
       <div className="artist">

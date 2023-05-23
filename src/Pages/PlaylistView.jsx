@@ -4,20 +4,22 @@ import { UserContext } from '../usercontext';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export const Event = ({ v }) => {
+import User from '/img/user1.png';
+
+export const PlaylistView = ({ v }) => {
 
   const { user, email, setUser, authToken, setAuthToken } = useContext(UserContext);
-  const { events = [], page=0, isLoading=true, error="" } = useSelector((state) => state.events);
+  const { playlists = [], page=0, isLoading=true, error="" } = useSelector((state) => state.playlists);
   const dispatch = useDispatch();
   
   return (
-    <div className="artists-container">
+    <div className="artist-container">
       <div className="artist">
-        <img src={v.image} />
+        <img src={"http://equip02.insjoaquimmir.cat/" + v.image} />
         <div className="artist-details">
-          <Link to={"/events/" + v.id}><h4 className='white'>{v.name}</h4></Link>
+          <h4 className='white'>{v.title}</h4>
         </div>
       </div>
-    </div>
-  )
+    </div> 
+    )
 }

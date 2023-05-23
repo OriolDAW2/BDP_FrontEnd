@@ -20,9 +20,6 @@ export const getPlaylists = (authToken, page = 0) => {
 
         if(resposta != null) {
             dispatch(setPlaylists(resposta));
-            console.log(resposta);
-        }else {
-            console.log("Catch");
         }
     }
 }
@@ -50,8 +47,6 @@ export const addPlaylist = (formulari, authToken) => {
 
     if (resposta != null) {
         console.log("Playlist Creada");
-    } else {
-        console.log("Error al crear");
     }
   };
 }
@@ -68,16 +63,13 @@ export const getPlaylist = (id, authToken) => {
             },
             method: "GET",
         };
-        const url = "http://equip02.insjoaquimmir.cat/api/playlists/" + id
+        const url = "http://equip02.insjoaquimmir.cat/api/playlists/" + id + "/"
 
         const data = await fetch(url, headers);
         const resposta = await data.json();
 
         if(resposta != null) {
             dispatch(setPlaylist(resposta));
-            console.log(resposta);
-        }else {
-            console.log("Catch");
         }
     };
 }

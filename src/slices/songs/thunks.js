@@ -20,9 +20,6 @@ export const getSongs = (authToken, page = 0) => {
 
         if(resposta != null) {
             dispatch(setSongs(resposta));
-            console.log(resposta);
-        }else {
-            console.log("Catch");
         }
     }
 }

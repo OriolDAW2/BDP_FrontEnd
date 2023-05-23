@@ -20,9 +20,6 @@ export const getArtists = (authToken, page = 0) => {
 
         if(resposta != null) {
             dispatch(setArtists(resposta));
-            console.log(resposta);
-        }else {
-            console.log("Catch");
         }
     }
 }
